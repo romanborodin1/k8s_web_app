@@ -20,6 +20,9 @@ echo "<p>Application version: $app_version</p>";
 <body>
     <h1>Test page</h1>
     <p>Test paragraph</p>
+    <?php
+        echo "Hello world from PHP!";
+    ?>
     <p>Test paragraph2</p>
 </body>
 </html>
