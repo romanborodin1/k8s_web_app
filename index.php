@@ -1,6 +1,6 @@
 <?php
 $ip_server = $_SERVER['SERVER_ADDR'];
-$app_version = '1.0.0';
+$app_version = '1.0.1';
 
 echo "<h1>Welcome to the Simple Website based on PHP</h1>";
 echo "<h2>Created by <font color=orange>Roman Borodin</font></h2>";
