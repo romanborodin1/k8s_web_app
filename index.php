@@ -14,6 +14,24 @@
         echo date(DATE_RSS);
     ?>
     <p>Test paragraph2</p>
+    <?php
+        echo 9
+        +
+        10
+        -4
+        ;
+        echo "<br/>TEXT<br/>";
+    ?>
+    <?php
+    if (mt_rand(0,1)){
+        ?>
+        <div style="color: blue">Сининй текст</div>
+        <?php
+    } else {
+        ?>
+        <div style="color: red">Красный текст</div>
+        <?php
+    }
+    ?>
 </body>
 </html>
-
