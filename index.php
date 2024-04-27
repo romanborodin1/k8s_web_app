@@ -4,21 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <title>Урок 3</title>
+    <title>Урок 4</title>
 </head>
-<body>
-    <!-- Текстровая строка в HTML -->
-    
+<body> 
     <?php
-    /*
-    Здесь можно писать
-    многострочные
-    комментрии. 
-    */
-        echo "Строка 1<br/>";    // Просто 1 текстовая строка
-        // Ещё 1 комментарий
-        echo "Строка 2";    # Аналогичный однострочный комментрий
-    // Любые PHP комментарии доступны только внутри тегов PHP!!!
+        echo "Главный скрипт<br/>";
+        include 'second.php';       // В случае с include при отсутствии скрипта будет выведено предупреждение
+        // require 'second.php';    // В случае с require при отсутствии скрипта будет поднято исключение 
+        echo "Главный скрипт<br/>";
     ?>
 </body>
 </html>
