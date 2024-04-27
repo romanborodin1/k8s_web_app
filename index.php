@@ -4,34 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <title><?= "new page"; ?></title>
+    <title>Урок 3</title>
 </head>
 <body>
-    <h1>Test page</h1>
-    <p>Test paragraph</p>
+    <!-- Текстровая строка в HTML -->
+    
     <?php
-        echo "<p>Текущая дата и время:</p>";
-        echo date(DATE_RSS);
-    ?>
-    <p>Test paragraph2</p>
-    <?php
-        echo 9
-        +
-        10
-        -4
-        ;
-        echo "<br/>TEXT<br/>";
-    ?>
-    <?php
-    if (mt_rand(0,1)){
-        ?>
-        <div style="color: blue">Сининй текст</div>
-        <?php
-    } else {
-        ?>
-        <div style="color: red">Красный текст</div>
-        <?php
-    }
+    /*
+    Здесь можно писать
+    многострочные
+    комментрии. 
+    */
+        echo "Строка 1<br/>";    // Просто 1 текстовая строка
+        // Ещё 1 комментарий
+        echo "Строка 2";    # Аналогичный однострочный комментрий
+    // Любые PHP комментарии доступны только внутри тегов PHP!!!
     ?>
 </body>
 </html>
