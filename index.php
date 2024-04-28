@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Урок 6</title>
+    <title>Урок 7</title>
 </head>
 <body> 
-<?php
-        // integers
-        $num = 1234;
-        $num = -12;
-        $num = 012;    // Число в восьмеричной системе счисления
-        $num = 0x12A;    // Число в шестнатиричной системе счисления
-        echo 07 + 03;    // 012, 10. Выведет в 10-тичной
-        echo "<br/>";
-	echo 0xA + 0xF;    // 25
-        echo "<br/>";
+    <?php
+        // Booleans
+        $bool_var = true;    // Можно в любом регистре - TRUE, True, TrUe и т.д.. Но лучше писать в нижнем регистре
+        $bool_var = false;   // Тоже - лучше в нижнем регистре 
 
-        // floats
-        $var = 1.23456;
-        $var = 1.23456e-3;    // Экспоненциальная запись. 1.23456 * 10^(-3)
-        echo $var;
-        echo "<br/>"; 
-        $var = 1.23456e+3;
-        echo $var;
+	// Strings
+        $str_var = "Hello world! '12345'";    // Можно использовать двойные (""), одиночные кавычки ('') и обратные (``)
+        echo $str_var;
+        echo "<br/>";
+        $some_var = 5;
+        echo "Some var = $some_var";
+        echo "<br/>";
+	echo "Some var = \$some_var";    // Экранируем знак $ для буквального его вывода на экран
+        echo "<br/>";
+	echo "Some var = \"$some_var\"";    // Двойные кавычки тоже можно экранировать
+        echo "<br/>";
+	echo "Some var = {$some_var}7";    // Фигурные скобки 
+        echo "<br/>";
+	echo `ls`;    // Команды операционной системы
     ?>
 </body>
 </html>
