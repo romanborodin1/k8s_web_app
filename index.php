@@ -3,38 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Урок 8</title>
+    <title>Урок 9</title>
 </head>
 <body> 
     <?php
-        $user = "Иван";
-        // $user;
-        if(isset($user))    // Проверяем, существует ли переменная
-            echo "Переменная существует";
-        else
-            echo "Переменная не существует";
-        echo "<br/>";
+        $str = '45.2';
+        $number = $str - 12;    // Пример неявного приведения типов
+        echo $number;    // 33.2
+        echo '<br/>';
 
-        $str = "";
-	if(empty($user))    // Проверяем, пустая ли переменная строкового типа
-            echo "Строка пустая";
-        else
-            echo "В строке что-то есть";
-        echo "<br/>";
+        $str = '45.2_some_text_here_123';
+        $number = $str - 12;    // Пример неявного приведения типов
+        echo $number;    // 33.2. Всё текстового он отбросил
+        echo '<br/>';
 
-        echo gettype(123);    // Узнаём тип переменной
-        echo "<br/>";
-        echo gettype(1.23);    // Узнаём тип переменной
-        echo "<br/>";
-        echo gettype("123");    // Узнаём тип переменной
-        echo "<br/>";
-        echo gettype(true);    // Узнаём тип переменной
-        echo "<br/>";
+        // $var = 0.0;    // -> false
+        // $var = 0;    // -> false
+        // $var = "0";    // -> false
+        if ($var) {
+            echo "Переменная $var рассматривается как true";    // Приведение к строковмоу типу
+        } else {
+            echo "Переменная $var рассматривается как false";
+        }
+        echo '<br/>';
 
-	echo is_int(123);    // Проверяем, является ли значение целочисленным
-        // В PHP есть много функций проверки типов данных. Они начинаются на is_. Примеры: is_int(), is_array() и так далее 
-        echo "<br/>";
-        
+        echo true;    // -> 1
+        echo '<br/>';
+        echo false;    // -> ""
+        echo '<br/>';
+
+        // Явное приведение типов:
+        $float = 4.3;
+        $number = (int)$float;    // Интерпретатор отбрасывает дробную часть и переводит вещесвтенное число в целое
+        echo $number;
+        echo '<br/>';
+        $num = 21;
+	$f = (float)($num/2) - (int)($num/2);    // Если будет 0, то число будет чётное
+        echo $f;
     ?>
 </body>
 </html>
