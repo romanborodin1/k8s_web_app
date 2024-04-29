@@ -8,20 +8,30 @@
 <body> 
     <?php
         require 'point.php';
-        $point1 = new Point;
-        $point1->x = 13;
-        $point1->y = 2;
-        echo $point1->x;
+	echo Point::$num;    // Обращение к статической переменной
         echo "<br/>";
 
-        $point2 = new Point();    // Можно создавать объект класса с круглыми скобками и без них
-        $point2->x = 11;
-        $point2->y = 47;
-	echo $point2->x;
-        echo "<br/>";
+        $first = $second = 2;
+        $first = 3;
+	echo $first . '<br/>' . $second;
+	echo "<br/>";
 
-	unset($point2);    // Удаляем объект класса Point, на который указывает переменная point2
-        echo $point2->x;
+        $first_point = new Point;
+        $first_point->x = 3;
+	$first_point->y = 3;
+
+	$second_point = $first_point;
+        $second_point->x = 5;
+        $second_point->y = 5;
+
+        echo "x: {$first_point->x}, y: {$first_point->y}<br/>";
+	echo "x: {$second_point->x}, y: {$second_point->y}<br/>";
+
+        $num1 = 5;
+        $num2 = &$num1;    // Указываем ссылку на объект, который хранится в переменной $num1
+        $num2 = 333;
+	echo "num1: {$num1}<br/>";    // 333
+        
     ?>
 </body>
 </html>
