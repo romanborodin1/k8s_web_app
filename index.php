@@ -3,39 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Урок 13</title>
+    <title>Урок 14</title>
 </head>
 <body> 
     <?php
-        require 'point.php';
-
-        $first_point = new Point;
-        $first_point->x = 3;
-	$first_point->y = 3;
-
-	$second_point = clone $first_point;    // Клонировать объект, а не сделать ссылку на него
-        $second_point->x = 5;
-        $second_point->y = 5;
-
-	echo "x: {$first_point->x}, y: {$first_point->y}<br/>";
+        define('NUMBER', 1);    // Принято задавать константы БОЛЬШИМИ буквами. 2-й аргумент - значение. Тут могут быть только числа, строки массивы
+        echo NUMBER;
         echo "<br/>";
-	echo "x: {$second_point->x}, y: {$second_point->y}<br/>";
 
-        echo pow(2, 8);     // 2^8
+        define('OTHER', 11);
+        if (!define('OTHER', 33)) {
+            echo "[WARN] Не удалось создать константу OTHER";
+        } else {
+            echo "[INFO] Константа OTHER успешно создана и имеет значение " . OTHER;
+        }
         echo "<br/>";
-        echo sqrt(16);     // Корень квадратный из 16
-	echo "<br/>";
+        if (defined('OTHER')) {    // Проверить, задана ли уже константа
+            echo "[INFO] Константа OTHER уже создана";
+        }
+        echo "<br/>";
 
-        $p1 = new Point;
-        $p1->x = 10;
-        $p1->y = 34;
+        echo constant('OTHER');    // Данная функция позволяет задавать динамическое имя константы
+        echo "<br/>";
+	$num = mt_rand(1, 10);
+	$name = "VALUE($num)";
+        define($name, $num);
+	echo "[INFO] Constant {$name} = " . constant($name) . "<br/>";
 
-        $p2 = new Point;
-        $p2->x = 3;
-	$p2->y = 10;
-
-	$distance = sqrt((pow(($p2->x - $p1->x), 2) + pow(($p2->y - $p1->y), 2)));
-        echo $distance;
+        // Пример стандартных констант:
+	echo "[INFO] Filename: " . __FILE__ . "<br/>";
+        echo "[INFO] String: " . __LINE__ . "<br/>";
     ?>
 </body>
 </html>
