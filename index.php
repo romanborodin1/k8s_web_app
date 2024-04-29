@@ -3,28 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Урок 7</title>
+    <title>Урок 8</title>
 </head>
 <body> 
     <?php
-        // Booleans
-        $bool_var = true;    // Можно в любом регистре - TRUE, True, TrUe и т.д.. Но лучше писать в нижнем регистре
-        $bool_var = false;   // Тоже - лучше в нижнем регистре 
+        $user = "Иван";
+        // $user;
+        if(isset($user))    // Проверяем, существует ли переменная
+            echo "Переменная существует";
+        else
+            echo "Переменная не существует";
+        echo "<br/>";
 
-	// Strings
-        $str_var = "Hello world! '12345'";    // Можно использовать двойные (""), одиночные кавычки ('') и обратные (``)
-        echo $str_var;
+        $str = "";
+	if(empty($user))    // Проверяем, пустая ли переменная строкового типа
+            echo "Строка пустая";
+        else
+            echo "В строке что-то есть";
         echo "<br/>";
-        $some_var = 5;
-        echo "Some var = $some_var";
+
+        echo gettype(123);    // Узнаём тип переменной
         echo "<br/>";
-	echo "Some var = \$some_var";    // Экранируем знак $ для буквального его вывода на экран
+        echo gettype(1.23);    // Узнаём тип переменной
         echo "<br/>";
-	echo "Some var = \"$some_var\"";    // Двойные кавычки тоже можно экранировать
+        echo gettype("123");    // Узнаём тип переменной
         echo "<br/>";
-	echo "Some var = {$some_var}7";    // Фигурные скобки 
+        echo gettype(true);    // Узнаём тип переменной
         echo "<br/>";
-	echo `ls`;    // Команды операционной системы
+
+	echo is_int(123);    // Проверяем, является ли значение целочисленным
+        // В PHP есть много функций проверки типов данных. Они начинаются на is_. Примеры: is_int(), is_array() и так далее 
+        echo "<br/>";
+        
     ?>
 </body>
 </html>
