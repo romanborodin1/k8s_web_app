@@ -3,36 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Урок 14</title>
+    <title>Урок 15</title>
 </head>
 <body> 
     <?php
-        define('NUMBER', 1);    // Принято задавать константы БОЛЬШИМИ буквами. 2-й аргумент - значение. Тут могут быть только числа, строки массивы
-        echo NUMBER;
-        echo "<br/>";
+        echo "Путь к файлу: " . __DIR__ . '<br/>';    // Путь к каталогу с файлом
+        // require_once 'point.php';    // Подключить файл только 1 раз
+        require_once __DIR__ . "/point.php";    // Подключить файл только 1 раз
+        $p1 = new Point;
+        $p1->x = 10;
+        $p1->y = 34;
 
-        define('OTHER', 11);
-        if (!define('OTHER', 33)) {
-            echo "[WARN] Не удалось создать константу OTHER";
-        } else {
-            echo "[INFO] Константа OTHER успешно создана и имеет значение " . OTHER;
+        $p2 = new Point;
+        $p2->x = 3;
+        $p2->y = 10;
+
+        $distance = sqrt((pow(($p2->x - $p1->x), 2) + pow(($p2->y - $p1->y), 2)));
+	echo $distance . "<br/>";
+
+        class ConstClass {
+            const NAME = "str";    // Так задаются константы внутри класса. Здесь могут быть числа, массивы, строки, логические значения
+	}
+        if (defined('ConstClass::NAME')) {    // Указываем через '::'!
+            echo "Константа определена";
+	} else {
+            echo "Константа НЕ определена";
         }
-        echo "<br/>";
-        if (defined('OTHER')) {    // Проверить, задана ли уже константа
-            echo "[INFO] Константа OTHER уже создана";
-        }
-        echo "<br/>";
-
-        echo constant('OTHER');    // Данная функция позволяет задавать динамическое имя константы
-        echo "<br/>";
-	$num = mt_rand(1, 10);
-	$name = "VALUE($num)";
-        define($name, $num);
-	echo "[INFO] Constant {$name} = " . constant($name) . "<br/>";
-
-        // Пример стандартных констант:
-	echo "[INFO] Filename: " . __FILE__ . "<br/>";
-        echo "[INFO] String: " . __LINE__ . "<br/>";
     ?>
 </body>
 </html>
