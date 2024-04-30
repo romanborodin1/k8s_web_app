@@ -3,60 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Урок 17</title>
+    <title>Урок 18</title>
 </head>
 <body> 
     <?php
-        echo 4 ** 2;    // Возведение в степень
-        echo "<br/>";
-	echo 8 % 3;    // Деление по модулю
-	echo "<br/>";
+        echo 6 & 10;    // [AND]: 0b0110 & 0b1010 = 0b0010 = 2
+        echo '<br/>';
+        echo 6 | 10;    // [OR]: 0b0110 | 0b1010 = 0b1110 = 14
+        echo '<br/>';
+        echo 6 ^ 10;    // [XOR]: 0b0110 ^ 0b1010 = 0b1100 = 12
+        echo '<br/>';
+        echo ~6;        // [NOT]: ~0b0110 = -7 ???
+        echo '<br/>';
+        echo 6 << 1;    // [Побитовый сдвиг влево]: 0b0110 << 1 = 0b1100 = 12
+        echo '<br/>';
+        echo 6 >> 1;    // [Побитовый сдвиг вправо]: 0b0110 >> 1 = 0b0011 = 3
+        echo '<br/>';
+
+        // Сокращенные записи:
+        $num = 6;
         $var = 10;
-	echo ++$var;     // Инкремент - увеличение на 1
-        echo "<br/>";
-        echo $var;    // Декремент - уменьшение на 1
-        echo "<br/>";
-	echo --$var;    // Декремент - уменьшение на 1
-        echo "<br/>";
-        echo $var--;
-        echo "<br/>";
-	echo $var;
-        echo "<br/>";
-	echo 8 / 3;    // 2.6666666666667
-        echo "<br/>";
-	echo (int) (8 / 3);    // Целочисленное деление
-        echo "<br/>";
-
-        // Алгоритм определения четности числа:
-        $num = 8;
-	if ($num % 2) echo "Число НЕчетное<br/>";
-        else echo "Число четное<br/>";
-
-	// Сокращенные записи арифметических операций:
-	$num = 10;
-	$var = 2;
-        $num .= $var;    // $num = $num . $var;
-        $num += $var;    // $num = $num + $var;
-        $num -= $var;    // $num = $num - $var;
-        $num *= $var;    // $num = $num * $var;
-        $num /= $var;    // $num = $num / $var;
-        $num %= $var;    // $num = $num % $var;
-        $num **= $var;    // $num = $num ** $var;
-        $num++;    // $num = $num + 1;
-        $num--;    // $num = $num - 1;
-
-        echo 16 ** 0.5;    // Заменяет функции sqrt() и pow();
-        echo "<br/>";
-
-        // Инкремент и декремент
-	$var = 3;
-        echo ++$var;    // Префиксная запись - сначала увеличивает, потом возвращает значение переменной
-        echo "<br/>";
-        echo $var;
-        echo "<br/>";
-        echo $var++;    // Постфиксная запись - сначала возвращает значение пемеренной, а только потом её увеличивает
-        echo "<br/>";
-        echo $var; 
+	$num &= $var;
+        $num |= $var;
+        $num ^= $var;
+        $num <<= $var;
+        $num >>= $var; 
     ?>
 </body>
 </html>
